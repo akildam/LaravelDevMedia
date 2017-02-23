@@ -21,6 +21,7 @@
         @include('layouts._site._nav')
     </header>
     @yield('content')
+    @include('layouts._site._footer')
 </div>
 <script src="{{ asset('lib/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('lib/materialize/dist/js/materialize.js') }}"></script>
