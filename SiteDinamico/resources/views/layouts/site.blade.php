@@ -16,13 +16,13 @@
     </script>
 </head>
 <body>
-<div id="app">
     <header>
         @include('layouts._site._nav')
     </header>
-    @yield('content')
+    <main>
+        @yield('content')
+    </main>
     @include('layouts._site._footer')
-</div>
 <script src="{{ asset('lib/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('lib/materialize/dist/js/materialize.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>
