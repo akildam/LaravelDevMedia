@@ -24,25 +24,14 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        <nav>
-            <div class="nav-wrapper">
-                <div class="container">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="#">home</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li><a href="#">home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+    <header>
+        @include('layouts._admin._nav')
+    </header>
+    <main>
         @yield('content')
-    </div>
-
+    </main>
+        @include('layouts._common._footer')
+    
     <!-- Scripts -->
     <script src="{{ asset('lib/jquery/dist/jquery.js') }}"></script>
     <script src="{{ asset('lib/materialize/dist/js/materialize.js') }}"></script>

@@ -22,7 +22,7 @@
     <main>
         @yield('content')
     </main>
-    @include('layouts._site._footer')
+    @include('layouts._common._footer')
 <script src="{{ asset('lib/jquery/dist/jquery.js') }}"></script>
 <script src="{{ asset('lib/materialize/dist/js/materialize.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>
