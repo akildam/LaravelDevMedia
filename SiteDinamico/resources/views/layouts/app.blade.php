@@ -28,9 +28,21 @@
         @include('layouts._admin._nav')
     </header>
     <main>
+        @if(Session::has('mensagem'))
+        <div class="container">
+            <div class="row">
+                <div class="card {{ Session::get('mensagem')['class'] }}">
+                    <div align="center" class="card-content">
+                        {{ Session::get('mensagem')['msg']}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+        
         @yield('content')
     </main>
-        @include('layouts._common._footer')
+    @include('layouts._common._footer')
     
     <!-- Scripts -->
     <script src="{{ asset('lib/jquery/dist/jquery.js') }}"></script>

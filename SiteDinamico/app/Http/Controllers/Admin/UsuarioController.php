@@ -19,6 +19,10 @@ class UsuarioController extends Controller
         if($usuarioValido){
             return redirect()->route('admin.principal');
         }
-        return redirect()->route('site.home');
+        \Session::flash('mensagem', [
+            'msg' => 'Usuário ou senha incorretos.',
+            'class' => 'red white-text'
+        ]);
+        return redirect()->route('admin.login');
     }
 }
