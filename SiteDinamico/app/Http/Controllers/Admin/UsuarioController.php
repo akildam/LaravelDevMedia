@@ -36,4 +36,23 @@ class UsuarioController extends Controller
         $usuarios = User::all();
         return view('admin.usuarios.index', compact('usuarios'));
     }
+    
+    public function adicionar() {
+        return view('admin.usuarios.adicionar');
+    }
+    
+    public function salvar(Request $request) {
+        $dados = $request->all();
+        $usuario = new User();
+        $usuario->name = $dados['nome'];
+        $usuario->email = $dados['email'];
+        $usuario->password = bcrypt($dados['senha']);
+        $usuario->save();
+        
+        \Session::flash('mensagem', [
+            'msg' => 'Usuário adicionado com sucesso.',
+            'class' => 'light-green lighten-4 light-green-text text-darken-2 z-depth-0'
+        ]);
+        return redirect()->route('admin.usuarios');
+    }
 }

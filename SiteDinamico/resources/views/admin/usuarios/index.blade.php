@@ -39,5 +39,8 @@
             </tbody>
         </table>
     </div>
+    <div class="row">
+        <a class="btn green" href="{{route('admin.usuarios.adicionar')}}">Adicionar</a>
+    </div>
 </div>
 @endsection
