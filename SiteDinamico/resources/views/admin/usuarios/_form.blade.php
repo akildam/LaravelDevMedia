@@ -1,12 +1,12 @@
 <div class="input-field">
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" class="validate" id="nome"/>
+    <label for="name">Nome</label>
+    <input type="text" name="name" class="validate" id="name" value="{{ $usuario->name ?? '' }}" required="required"/>
 </div>
 <div class="input-field">
     <label for="email">E-mail</label>
-    <input type="text" name="email" class="validate" id="email"/>
+    <input type="text" name="email" class="validate" id="email" value="{{ $usuario->email ?? '' }}" required="required"/>
 </div>
 <div class="input-field">
-    <label for="">Senha</label>
-    <input type="password" name="senha" class="validate" id="senha"/>
+    <label for="password">Senha</label>
+    <input type="password" name="password" class="validate" id="password"/>
 </div>
