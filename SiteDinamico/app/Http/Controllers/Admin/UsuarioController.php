@@ -77,4 +77,13 @@ class UsuarioController extends Controller
         ]);
         return redirect()->route('admin.usuarios');
     }
+    
+    public function deletar($id) {
+        User::find($id)->delete();
+        \Session::flash('mensagem', [
+            'msg' => 'Usuário removido com sucesso.',
+            'class' => 'light-green lighten-4 light-green-text text-darken-2 z-depth-0'
+        ]);
+        return redirect()->route('admin.usuarios');
+    }
 }

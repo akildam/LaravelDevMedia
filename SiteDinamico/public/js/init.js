@@ -2,6 +2,7 @@ $(document).ready(function () {
     $(".button-collapse").sideNav();
     $(".slider").slider();
     $('select').material_select();
+    $('.modal').modal();
 });
 
 function sliderPrev(){
