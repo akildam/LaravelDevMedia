@@ -8,14 +8,20 @@
         </div>
         <div class="row section">
             <div class="col s12 m6">
-                <img src="{{asset('img/001.jpg')}}" alt="mansão" class="responsive-img">
+                @if(isset($pagina->mapa))
+                <div class="video-container">
+                    {!! $pagina->mapa !!}
+                </div>
+                @else
+                    <img src="{{asset( $pagina->imagem )}}" alt="mansão" class="responsive-img">
+                @endif
             </div>
             <div class="col s12 m6">
-                <h4>A empresa</h4>
+                <h4>{{$pagina->titulo}}</h4>
                 <blockquote>
-                    Descrição da empresa.
+                    {{$pagina->descricao}}
                 </blockquote>
-                <p>Texto sobre a empresa.</p>
+                <p>{{$pagina->texto}}</p>
             </div>
         </div>
     </div>
