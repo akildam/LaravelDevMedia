@@ -4,10 +4,10 @@
             <a href="{{route('admin.principal')}}" class="brand-logo">Elysium Admin</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
-                @include('layouts._admin._itensDeMenu')
+                @include('layouts._admin._itensDeMenu', ['type' =>'desktop'])
             </ul>
             <ul class="side-nav" id="mobile-demo">
-                @include('layouts._admin._itensDeMenu')
+                @include('layouts._admin._itensDeMenu', ['type' =>'mobile'])
             </ul>
         </div>
     </div>

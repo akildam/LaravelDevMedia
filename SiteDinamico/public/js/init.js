@@ -1,8 +1,9 @@
 $(document).ready(function () {
-    $(".button-collapse").sideNav();
-    $(".slider").slider();
+    $('.button-collapse').sideNav();
+    $('.slider').slider();
     $('select').material_select();
     $('.modal').modal();
+    $('.dropdown-button').dropdown();
 });
 
 function sliderPrev(){
