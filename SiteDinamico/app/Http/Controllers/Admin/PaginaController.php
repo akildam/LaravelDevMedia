@@ -22,11 +22,33 @@ class PaginaController extends Controller
 
     public function atualizar(Request $request, $id)
     {
-        
-    }
-
-    public function functionName($param)
-    {
-        
+        $dados = $request->all();
+        $pagina = Pagina::find($id);
+        $pagina->titulo = trim($dados['titulo']);
+        $pagina->descricao = trim($dados['descricao']);        
+        $pagina->texto = trim($dados['texto']);
+        if(isset($dados['email'])){
+            $pagina->email = trim($dados['email']);
+        }
+        if(isset($dados['mapa']) && trim($dados['mapa']) != ''){
+            $pagina->mapa = trim($dados['mapa']);
+        }else{
+            $pagina->mapa = null;
+        }
+        $file = $request->file('imagem');
+        if($file){
+            $rand = rand(11111,99999);
+            $diretorio = "img/paginas/".$id."/";
+            $ext = $file->guessClientExtension();
+            $nomeArquivo = "_img_".$rand.".".$ext;
+            $file->move($diretorio,$nomeArquivo);
+            $pagina->imagem = $diretorio."/".$nomeArquivo;
+        }
+        $pagina->update();
+        \Session::flash('mensagem', [
+            'msg' => 'Página atualizada com sucesso.',
+            'class' => 'light-green lighten-4 light-green-text text-darken-2 z-depth-0'
+        ]);
+        return redirect()->route('admin.paginas');
     }
 }
