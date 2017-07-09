@@ -24,9 +24,12 @@ Route::get('/sobre', [
 
 Route::get('/contato', [
     'as' => 'site.contato',
-    function() {
-        return view('site.contato');
-    }
+    'uses' => 'Site\PaginaController@contato'
+]);
+
+Route::post('/contato/enviar', [
+    'as' => 'site.contato.enviar',
+    'uses' => 'Site\PaginaController@enviarContato'
 ]);
 
 Route::get('/imovel/{id}/{titulo?}', [

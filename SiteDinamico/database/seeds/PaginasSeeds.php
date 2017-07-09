@@ -12,7 +12,7 @@ class PaginasSeeds extends Seeder
      */
     public function run()
     {
-        $existe = Pagina::where('tipo','=','sobre')->count();
+        /*$existe = Pagina::where('tipo','=','sobre')->count();
         if($existe){
             $paginaSobre = Pagina::where('tipo','=','sobre')->first();
         }else{
@@ -26,6 +26,22 @@ class PaginasSeeds extends Seeder
         $paginaSobre->tipo = "sobre";
         $paginaSobre->save();
         
-        echo "Pagina Sobre criada com sucesso.";
+        echo "Pagina Sobre criada com sucesso.";*/
+        
+        $existe = Pagina::where('tipo','=','contato')->count();
+        if($existe){
+            $pagina = Pagina::where('tipo','=','contato')->first();
+        }else{
+            $pagina = new Pagina();
+        }
+        $pagina->titulo = "Entre em contato";
+        $pagina->descricao = "Página de contato.";
+        $pagina->texto = "Contato.";
+        $pagina->imagem = "img/001.jpg";
+        $pagina->email = "oliveira.marques.renato@gmail.com";
+        $pagina->tipo = "contato";
+        $pagina->save();
+        
+        echo "Pagina Contato criada com sucesso.";
     }
 }
