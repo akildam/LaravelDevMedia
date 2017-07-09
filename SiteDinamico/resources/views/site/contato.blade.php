@@ -30,8 +30,8 @@
                         <label for="email">E-mail</label>
                     </div>
                     <div class="input-field">
-                        <textarea name="" id="" cols="30" rows="10" class="materialize-textarea"></textarea>
-                       <label for="email">Mensagem</label>
+                        <textarea name="mensagem" id="" cols="30" rows="10" class="materialize-textarea"></textarea>
+                        <label for="email">Mensagem</label>
                     </div>
                     <button class="btn blue">Enviar</button>
                 </form>
